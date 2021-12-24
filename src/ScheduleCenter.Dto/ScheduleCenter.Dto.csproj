@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScheduleCenter.Common\ScheduleCenter.Common.csproj" />
+    <ProjectReference Include="..\ScheduleCenter.Models\ScheduleCenter.Models.csproj" />
+    <ProjectReference Include="..\ScheduleCenter.Shared\ScheduleCenter.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
