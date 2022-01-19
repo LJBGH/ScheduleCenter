@@ -26,7 +26,7 @@ namespace ScheduleCenter.Swagger
                 { 
                     Title = _title + " 接口文档", 
                     Version = _version, 
-                    Description = "基于.Net5.0和Sqlsugar的WebAPI框架模板",
+                    Description = "任务调度中心API",
                     Contact = new OpenApiContact 
                     {
                         Name = _title,
