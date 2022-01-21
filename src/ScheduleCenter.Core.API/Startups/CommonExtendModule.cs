@@ -11,6 +11,8 @@ using ScheduleCenter.WebSockets.WebSockets;
 using ScheduleCenter.Shared;
 using ScheduleCenter.Core.Quertz;
 using Quartz.Spi;
+using System.Collections.Generic;
+using ScheduleCenter.Core.Jobs;
 
 namespace ScheduleCenter.Core.API.Startups
 {
@@ -49,8 +51,9 @@ namespace ScheduleCenter.Core.API.Startups
             //WebSocket注入
             services.AddWebSocket();
 
-            services.AddSingleton<IJobFactory, IOCJobFactory>();
 
+            //定时任务注入
+            services.AddJobs();
         }
 
 
@@ -68,6 +71,9 @@ namespace ScheduleCenter.Core.API.Startups
 
             //自定义异常中间件
             app.CustomerMiddleware();
+
+            //开启定时任务
+            //app.StartJob();
 
             //使用静态文件
             app.UseStaticFiles();

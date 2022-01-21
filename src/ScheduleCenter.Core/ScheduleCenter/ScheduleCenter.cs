@@ -219,7 +219,8 @@ namespace ScheduleCenter.Core.ScheduleCenter
                 }
 
                 //反射获取任务执行类
-                var jobType = AssemblyExtension.GetAssemblyClass("AkliaJob.Quertz", "AkliaJob.Quertz.Jobs.TestJob");
+                //var jobType = AssemblyExtension.GetAssemblyClass("ScheduleCenter.Core", "ScheduleCenter.Core.Jobs.TestJob");
+                var jobType = AssemblyExtension.GetAssemblyClass(schedule.AssemblyName, schedule.ClassName);
 
                 // 定义这个工作，并将其绑定到我们的IJob实现类
                 IJobDetail job = new JobDetailImpl(schedule.JobName, schedule.JobGroup, jobType);
