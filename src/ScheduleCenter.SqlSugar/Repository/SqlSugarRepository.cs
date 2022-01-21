@@ -150,6 +150,7 @@ namespace ScheduleCenter.SqlSugar.Repository
             entity.NotNull(nameof(entity));
             entity = entity.CheckUpdate<T>(_jwtApp);
             var issuccess = await _dbContext.Updateable<T>(entity).ExecuteCommandAsync() > 0;
+            //_dbContext.Dispose();
             return new AjaxResult(issuccess == true ? ResultMessage.UpdateSuccess : ResultMessage.UpdateFail, issuccess == true ? AjaxResultType.Success : AjaxResultType.Fail);
         }
 

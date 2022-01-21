@@ -21,12 +21,15 @@ namespace ScheduleCenter.Core
         /// <param name="services"></param>
         public static void AddJobs(this IServiceCollection services)
         {
+            //自定义Job工厂注入
             services.AddSingleton<IJobFactory, IOCJobFactory>();
+
+            //定时任务注入
             List<Type> jobtype = new List<Type>();
             jobtype.Add(typeof(TestJob));
             foreach (var item in jobtype)
             {
-                services.AddSingleton(item);//Job使用瞬时依赖注入
+                services.AddTransient(item);//Job使用瞬时依赖注入
             }
         }
 
