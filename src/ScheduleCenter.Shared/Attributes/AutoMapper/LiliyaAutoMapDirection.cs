@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ScheduleCenter.Shared
 {
-    public enum ScheduleCenterAutoMapDirection
+    public enum LiliyaAutoMapDirection
     {
         From,
 

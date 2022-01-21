@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Quartz" Version="3.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScheduleCenter.Dto\ScheduleCenter.Dto.csproj" />
+    <ProjectReference Include="..\ScheduleCenter.Models\ScheduleCenter.Models.csproj" />
+    <ProjectReference Include="..\ScheduleCenter.Serilog\ScheduleCenter.Serilog.csproj" />
+  </ItemGroup>
+
+</Project>

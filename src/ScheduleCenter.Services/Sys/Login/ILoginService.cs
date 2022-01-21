@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleCenter.Services.Sys.Login
 {
-    public interface ILoginService
+    public interface ILoginService : IScopedDependency
     {
 
         /// <summary>

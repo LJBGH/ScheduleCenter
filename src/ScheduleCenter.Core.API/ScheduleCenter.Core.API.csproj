@@ -23,6 +23,7 @@
     <ProjectReference Include="..\ScheduleCenter.AspNetCore\ScheduleCenter.AspNetCore.csproj" />
     <ProjectReference Include="..\ScheduleCenter.AutoMapper\ScheduleCenter.AutoMapper.csproj" />
     <ProjectReference Include="..\ScheduleCenter.Consul\ScheduleCenter.Consul.csproj" />
+    <ProjectReference Include="..\ScheduleCenter.Core\ScheduleCenter.Core.csproj" />
     <ProjectReference Include="..\ScheduleCenter.Redis\ScheduleCenter.Redis.csproj" />
     <ProjectReference Include="..\ScheduleCenter.Serilog\ScheduleCenter.Serilog.csproj" />
     <ProjectReference Include="..\ScheduleCenter.Services\ScheduleCenter.Services.csproj" />

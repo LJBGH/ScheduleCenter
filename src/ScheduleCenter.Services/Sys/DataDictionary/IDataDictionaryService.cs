@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleCenter.Services.Sys.DataDictionary
 {
-    public interface IDataDictionaryService
+    public interface IDataDictionaryService : IScopedDependency
     {
         /// <summary>
         /// 添加数据字典

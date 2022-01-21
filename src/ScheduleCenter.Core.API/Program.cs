@@ -15,7 +15,7 @@ namespace ScheduleCenter.Core.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseServiceProviderFactory(new AutofacServiceProviderFactory()) //添加autofac服务,将内置容器替换为autofac容器
+                //.UseServiceProviderFactory(new AutofacServiceProviderFactory()) //添加autofac服务,将内置容器替换为autofac容器
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

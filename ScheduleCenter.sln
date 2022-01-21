@@ -43,9 +43,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleCenter.WebSockets",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleCenter.Redis", "src\ScheduleCenter.Redis\ScheduleCenter.Redis.csproj", "{FD609F07-7611-4B13-A22C-C565E008775C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleCenter.AspNetCore", "src\ScheduleCenter.AspNetCore\ScheduleCenter.AspNetCore.csproj", "{757DDDD4-A124-47FF-BA31-66A79F985A84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleCenter.AspNetCore", "src\ScheduleCenter.AspNetCore\ScheduleCenter.AspNetCore.csproj", "{757DDDD4-A124-47FF-BA31-66A79F985A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleCenter.MongoDB", "src\ScheduleCenter.MongoDB\ScheduleCenter.MongoDB.csproj", "{D6AB9826-50F0-44CD-B7DF-42A916DD7103}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleCenter.MongoDB", "src\ScheduleCenter.MongoDB\ScheduleCenter.MongoDB.csproj", "{D6AB9826-50F0-44CD-B7DF-42A916DD7103}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleCenter.Core", "src\ScheduleCenter.Core\ScheduleCenter.Core.csproj", "{04FC1C39-3D1D-43E1-9242-C30658F1FB29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{D6AB9826-50F0-44CD-B7DF-42A916DD7103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6AB9826-50F0-44CD-B7DF-42A916DD7103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6AB9826-50F0-44CD-B7DF-42A916DD7103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04FC1C39-3D1D-43E1-9242-C30658F1FB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04FC1C39-3D1D-43E1-9242-C30658F1FB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04FC1C39-3D1D-43E1-9242-C30658F1FB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04FC1C39-3D1D-43E1-9242-C30658F1FB29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{FD609F07-7611-4B13-A22C-C565E008775C} = {AA3A8082-A4E7-4AE7-A551-2C1C51A634DD}
 		{757DDDD4-A124-47FF-BA31-66A79F985A84} = {AA3A8082-A4E7-4AE7-A551-2C1C51A634DD}
 		{D6AB9826-50F0-44CD-B7DF-42A916DD7103} = {AA3A8082-A4E7-4AE7-A551-2C1C51A634DD}
+		{04FC1C39-3D1D-43E1-9242-C30658F1FB29} = {311A6FC6-3B27-4D55-9456-949B6A88FE86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F28A3CD1-2D22-403B-93BD-B0A8B65E75E2}

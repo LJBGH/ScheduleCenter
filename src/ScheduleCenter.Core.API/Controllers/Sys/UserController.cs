@@ -27,7 +27,7 @@ namespace ScheduleCenter.Core.API.Controllers.Sys
 
         private readonly IEventBus _eventBus;
 
-        public UserController(IUserService userService,IEventBus eventBus)
+        public UserController(IUserService userService, IEventBus eventBus)
         {
             _userService = userService;
             _eventBus = eventBus;

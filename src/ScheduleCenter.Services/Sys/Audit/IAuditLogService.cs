@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleCenter.Services.Sys.Audit
 {
-    public interface IAuditLogService
+    public interface IAuditLogService : IScopedDependency
     {
 
         /// <summary>

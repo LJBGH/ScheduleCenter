@@ -15,11 +15,11 @@ namespace ScheduleCenter.AutoMapper
             //获取所有程序集
             var assemblys = AssemblyHelper.GetAllAssemblies();
 
-            var suktAutoMapTypes = assemblys.SelectMany(x => x.GetTypes()).Where(s => s.IsClass && !s.IsAbstract && s.HasAttribute<ScheduleCenterAutoMapperAttribute>(true)).Distinct().ToArray();
+            var suktAutoMapTypes = assemblys.SelectMany(x => x.GetTypes()).Where(s => s.IsClass && !s.IsAbstract && s.HasAttribute<LiliyaAutoMapperAttribute>(true)).Distinct().ToArray();
 
             service.AddAutoMapper(mapper =>
             {
-                CreateMapping<ScheduleCenterAutoMapperAttribute>(suktAutoMapTypes, mapper);
+                CreateMapping<LiliyaAutoMapperAttribute>(suktAutoMapTypes, mapper);
             },
             assemblys,
             ServiceLifetime.Singleton
@@ -34,7 +34,7 @@ namespace ScheduleCenter.AutoMapper
         /// <typeparam name="TAttribute"></typeparam>
         /// <param name="sourceTypes"></param>
         /// <param name="mapperConfigurationExpression"></param>
-        private static void CreateMapping<TAttribute>(Type[] sourceTypes, IMapperConfigurationExpression mapperConfigurationExpression) where TAttribute : ScheduleCenterAutoMapperAttribute
+        private static void CreateMapping<TAttribute>(Type[] sourceTypes, IMapperConfigurationExpression mapperConfigurationExpression) where TAttribute : LiliyaAutoMapperAttribute
         {
             foreach (var sourceType in sourceTypes)
             {
@@ -47,12 +47,12 @@ namespace ScheduleCenter.AutoMapper
 
                 {
                     ///判断是To
-                    if (attribute.MapDirection.HasFlag(ScheduleCenterAutoMapDirection.To))
+                    if (attribute.MapDirection.HasFlag(LiliyaAutoMapDirection.To))
                     {
                         mapperConfigurationExpression.CreateMap(sourceType, tatgetType);
                     }
                     ///判断是false
-                    if (attribute.MapDirection.HasFlag(ScheduleCenterAutoMapDirection.From))
+                    if (attribute.MapDirection.HasFlag(LiliyaAutoMapDirection.From))
                     {
                         mapperConfigurationExpression.CreateMap(tatgetType, sourceType);
                     }

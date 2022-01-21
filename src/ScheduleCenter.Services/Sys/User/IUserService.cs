@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleCenter.Services.Sys.User
 {
-    public interface IUserService
+    public interface IUserService : IScopedDependency
     {
         /// <summary>
         /// 添加一个用户

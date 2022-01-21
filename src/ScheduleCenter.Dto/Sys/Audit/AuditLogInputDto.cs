@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ScheduleCenter.Dto.Sys.Audit
 {
-    [ScheduleCenterAutoMapper(typeof(AuditLogEntity))]
+    [LiliyaAutoMapper(typeof(AuditLogEntity))]
     public class AuditLogInputDto
     {
         /// <summary>

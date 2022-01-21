@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ScheduleCenter.Dto.Sys.DataDictionary
 {
-    [ScheduleCenterAutoMapper(typeof(DataDictionaryEntity))]
+    [LiliyaAutoMapper(typeof(DataDictionaryEntity))]
     public class DataDictionaryInputDto
     {
         /// <summary>

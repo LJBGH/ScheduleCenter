@@ -1,14 +1,16 @@
-﻿using ScheduleCenter.Shared;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using ScheduleCenter.Swagger;
 using Microsoft.AspNetCore.Builder;
 using ScheduleCenter.AutoMapper;
-using ScheduleCenter.SqlSugar.Repository;
 using Microsoft.Extensions.Configuration;
 using ScheduleCenter.Redis;
 using System;
 using ScheduleCenter.WebSockets;
-using ScheduleCenter.WebSockets.SocketDictionary;
+using ScheduleCenter.SqlSugar;
+using ScheduleCenter.WebSockets.WebSockets;
+using ScheduleCenter.Shared;
+using ScheduleCenter.Core.Quertz;
+using Quartz.Spi;
 
 namespace ScheduleCenter.Core.API.Startups
 {
@@ -18,29 +20,38 @@ namespace ScheduleCenter.Core.API.Startups
         /// <summary>
         /// 公共拓展模块注入
         /// </summary>
-        public static void AddCommonService(this IServiceCollection service, IConfiguration configuration) 
+        public static void AddCommonService(this IServiceCollection services, IConfiguration configuration) 
         {
+            //自动注入拓展
+            services.AddDependencyInjection();
+
             //swagger注入
-            service.AddSwaggerService();
+            services.AddSwaggerService();
+
             //授权认证注入
-            service.AddAuthService(configuration);
+            services.AddAuthService(configuration);
+
             //AutoMapper注入
-            service.AddAutoMapperService();
-            //SqlSugar泛型仓储注入
-            service.AddScoped(typeof(ISqlSugarRepository<>), typeof(SqlSugarRepository<>));
+            services.AddAutoMapperService();
+
             ////CRedis注入
             //service.AddCRedis();
+
             //使用分布式缓存
-            service.AddDistributeRedis();
+            services.AddDistributeRedis();
+
+            //Sqlsugar服务注入
+            services.AddSqlSugar();
+
             //事件总线注入
-            service.AddEventBus();
+            services.AddEventBus();
 
-            //WebSocket服务注入
-            service.AddSingleton<IWebSocketDictionary, WebSocketDictionary>();
+            //WebSocket注入
+            services.AddWebSocket();
+
+            services.AddSingleton<IJobFactory, IOCJobFactory>();
+
         }
-
-
-
 
 
         //公共中间件
@@ -61,8 +72,6 @@ namespace ScheduleCenter.Core.API.Startups
             //使用静态文件
             app.UseStaticFiles();
 
-
-
             //配置WebSocket中间件
             var webSocketOptions = new WebSocketOptions()
             {
@@ -71,9 +80,7 @@ namespace ScheduleCenter.Core.API.Startups
             app.UseWebSockets(webSocketOptions);
             app.UseMiddleware<WebSocketHandlerMiddleware>();
 
-
             return app;
         }
-
     }
 }

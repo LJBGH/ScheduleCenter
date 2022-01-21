@@ -1,27 +1,20 @@
-﻿using ScheduleCenter.Shared;
-using SqlSugar;
+﻿using ScheduleCenter.Models.Entitys.Schedule;
+using ScheduleCenter.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ScheduleCenter.Test
+namespace ScheduleCenter.Dto.Schedule
 {
-    /// <summary>
-    /// 任务计划表
-    /// </summary>
-    [SugarTable("Schedule")]
-    //[SplitTable(SplitType.Year)]
-    public class ScheduleEntity : IFullAuditedEntity
+    [LiliyaAutoMapper(typeof(ScheduleEntity))]
+    public class ScheduleInputDto
     {
-        /// <summary>
-        /// 主键(任务Id)
-        /// </summary>
-        [SugarColumn(IsPrimaryKey = true/*, IsIdentity = true*/)]
-        [DisplayName("主键(任务Id)")]
-        public Guid Id { get; set; }
+        ///// <summary>
+        ///// 主键(任务Id)
+        ///// </summary>
+        //[DisplayName("主键(任务Id)")]
+        //public Guid Id { get; set; }
 
         /// <summary>
         /// 任务名称
@@ -107,89 +100,5 @@ namespace ScheduleCenter.Test
         public int IntervalSecond { get; set; }
 
 
-
-
-
-
-        #region   通用字段
-        /// <summary>
-        /// 创建人Id
-        /// </summary>
-        [DisplayName("创建人Id")]
-        public Guid CreateUserId { get; set; }
-
-        /// <summary>
-        /// 创建时间
-        /// </summary>
-        [DisplayName("创建时间")]
-        public DateTime CreateTime { get; set; }
-
-        /// <summary>
-        /// 最后修改人Id
-        /// </summary>
-        [DisplayName("最后修改人Id")]
-        public Guid? LastModifyUserId { get; set; }
-
-        /// <summary>
-        /// 最后修改时间
-        /// </summary>
-        [DisplayName("最后修改时间")]
-        public DateTime LastModifyTime { get; set; }
-
-        /// <summary>
-        /// 是否删除
-        /// </summary>
-        [DisplayName("是否删除")]
-        public bool IsDeleted { get; set; }
-        #endregion
-    }
-
-    /// <summary>
-    /// 任务状态
-    /// </summary>
-    public enum JobStatus
-    {
-        /// <summary>
-        /// 停止
-        /// </summary>
-        Stoped = 0,
-
-        /// <summary>
-        /// 启用
-        /// </summary>
-        Enabled = 1
-
-    }
-
-    /// <summary>
-    /// 任务运行状态
-    /// </summary>
-    public enum RunStatus
-    {
-        /// <summary>
-        /// 待运行
-        /// </summary>
-        StayRun = 0,
-
-        /// <summary>
-        /// 运行中
-        /// </summary>
-        Runing = 1
-    }
-
-    /// <summary>
-    /// 触发器类型
-    /// </summary>
-    public enum TriggerType
-    {
-        /// <summary>
-        /// 简单类型触发器
-        /// </summary>
-        Simple = 0,
-
-        /// <summary>
-        /// Cron表达式
-        /// </summary>
-        Cron = 1
     }
 }

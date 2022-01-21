@@ -15,6 +15,57 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController">
+            <summary>
+            任务计划管理
+            </summary>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.StartScheduleAsync">
+            <summary>
+            开启任务调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.StopScheduleAsync">
+            <summary>
+            停止任务调度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.InsertAsync(ScheduleCenter.Dto.Schedule.ScheduleInputDto)">
+            <summary>
+            添加一条任务计划
+            </summary>
+            <param name="inputDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.ExecuteAsync(System.Guid)">
+            <summary>
+            执行任务
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.StopAsync(System.Guid)">
+            <summary>
+            停止任务
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.ResumeAsync(System.Guid)">
+            <summary>
+            恢复任务
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ScheduleCenter.Core.API.Controllers.Schedule.ScheduleController.GetAllAsync">
+            <summary>
+            获取有所计划任务
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ScheduleCenter.Core.API.Controllers.Sys.AuditLogController">
             <summary>
             审计日志管理

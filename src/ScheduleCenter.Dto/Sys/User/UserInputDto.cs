@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace ScheduleCenter.Dto.Sys.User
 {
-    [ScheduleCenterAutoMapper(typeof(UserEntity))]
+    [LiliyaAutoMapper(typeof(UserEntity))]
     public class UserInputDto
     {
 

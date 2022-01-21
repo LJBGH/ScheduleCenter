@@ -30,7 +30,6 @@ namespace ScheduleCenter.Core.API.Startups
             var assemblysService = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.Contains("ScheduleCenter.Services")).FirstOrDefault();
             //var assemblysRepository = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.Contains("ScheduleCenter.Repository")).FirstOrDefault();
 
-
             if (assemblysService == null) 
             {
                 throw new Exception("服务层程序集未找到，或程序集已丢失，请重新编译运行");

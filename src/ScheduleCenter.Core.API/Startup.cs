@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using ScheduleCenter.AspNetCore.Filter;
 using ScheduleCenter.WebSockets;
 using ScheduleCenter.WebSockets.WatsonWebSocket;
+using ScheduleCenter.Shared;
 
 namespace ScheduleCenter.Core.API
 {
@@ -36,12 +37,12 @@ namespace ScheduleCenter.Core.API
 
         }
 
-        //Autofac模块注入
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            //服务层注入
-            builder.ServicesInject();
-        }
+        ////Autofac模块注入
+        //public void ConfigureContainer(ContainerBuilder builder)
+        //{
+        //    //服务层注入
+        //    builder.ServicesInject();
+        //}
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
