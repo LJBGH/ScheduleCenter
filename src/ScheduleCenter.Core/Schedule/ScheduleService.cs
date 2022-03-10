@@ -91,11 +91,14 @@ namespace ScheduleCenter.Core.Schedule
             ScheduleManage.Instance.AddScheduleList(schedule);
 
             QuartzNetResult result;
+
+            //自定义定时任务
             if (schedule.TriggerType == TriggerType.Simple)
             {
                 result = await _scheduleCenter.RunSchedule<ScheduleManage>(schedule.JobName, schedule.JobGroup);
                 //result = SchedulerCenter.Instance.RunScheduleJob<>
             }
+            //Cron定时
             else
             {
                 result = await _scheduleCenter.RunSchedule<ScheduleManage>(schedule.JobName, schedule.JobGroup);
